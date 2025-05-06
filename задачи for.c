@@ -1,29 +1,15 @@
-		#include <stdio.h>
+#include <stdio.h>
+
+int main() {
+	double priceKg;
 	
-//	.Дано целое число N (> 0). Сформировать и вывести целочисленный массив размера N, содержащий степени двойки от первой до N-й: 2, 4, 8, 16, … .
+	printf("Введите цену за 1 кг конфет: ");
+	scanf("%lf", &priceKg);
 	
-		int main(void){
-			int N;
-			
-			printf("Введите число N");
-			scanf("%d", &N);
-			
-			if (N < 2 || N > 10) {
-				printf("N должно быть от 2 до 10\n");
-				return 1;
-			}
-			int array[N];
-			
-			for(int i=0;i<N;i++){
-				array[i] = 1 << ( i + 1);
-			}
-			
-			for(int i=0;i<N;i++){
-				printf("%d %d ", i+1,  array[i]);
-				
-			}
-			
-			printf("\n");
-			
-			return 0;
-		}
+	for (double weight = 1.2; weight <= 2.0; weight += 0.2) {
+		double cost = priceKg * weight;
+		printf("%.1lf кг = %.2lf rub.\n", weight, cost);
+	}
+	
+	return 0;
+}
